@@ -88,52 +88,54 @@ class _MyHomePageState extends State<MyHomePage>
                     Expanded(
                       child: Transform.translate(
                         offset: Offset(0, -width * 0.3),
-                        child: Column(
-                          children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: AnimateList(
-                                interval: 200.ms,
-                                effects: const [
-                                  FadeEffect(),
-                                  MoveEffect(
-                                      begin: Offset(-30, 0), end: Offset(0, 0))
-                                ],
-                                children: Ps5ControllerColors.values
-                                    .map(itemColor)
-                                    .toList(),
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: AnimateList(
+                                  interval: 200.ms,
+                                  effects: const [
+                                    FadeEffect(),
+                                    MoveEffect(
+                                        begin: Offset(-30, 0), end: Offset(0, 0))
+                                  ],
+                                  children: Ps5ControllerColors.values
+                                      .map(itemColor)
+                                      .toList(),
+                                ),
                               ),
-                            ),
-                            const SizedBox(
-                              height: 8,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: Text(
-                                'Custom Designs',
-                                style: Theme.of(context).textTheme.titleLarge,
+                              const SizedBox(
+                                height: 8,
                               ),
-                            ),
-                            const SizedBox(
-                              height: 8,
-                            ),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: AnimateList(
-                                interval: 200.ms,
-                                effects: const [
-                                  FadeEffect(),
-                                  MoveEffect(
-                                      begin: Offset(-30, 0), end: Offset(0, 0))
-                                ],
-                                children: Ps5ControllerCustomDesigns.values
-                                    .map(itemCustomDesign)
-                                    .toList(),
+                              Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: Text(
+                                  'Custom Designs',
+                                  style: Theme.of(context).textTheme.titleLarge,
+                                ),
                               ),
-                            )
-                          ],
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: AnimateList(
+                                  interval: 200.ms,
+                                  effects: const [
+                                    FadeEffect(),
+                                    MoveEffect(
+                                        begin: Offset(-30, 0), end: Offset(0, 0))
+                                  ],
+                                  children: Ps5ControllerCustomDesigns.values
+                                      .map(itemCustomDesign)
+                                      .toList(),
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     )
